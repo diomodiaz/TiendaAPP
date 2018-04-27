@@ -23,7 +23,8 @@ $datos = $objPublicacion->consultarPublicaciones($con);
                 background-attachment: fixed;
                 /*background-position: center;*/
             }
-            </style>
+            
+        </style>
     </head>
     <body>
         <div class="container">
