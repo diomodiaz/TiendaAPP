@@ -14,7 +14,6 @@
                 background-attachment: fixed;
                 /*background-position: center;*/
             }
-            
         </style>
     </head>
     <body>
