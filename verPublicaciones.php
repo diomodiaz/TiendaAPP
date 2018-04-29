@@ -23,26 +23,28 @@ $datos = $objPublicacion->consultarPublicaciones($con);
                 background-attachment: fixed;
                 /*background-position: center;*/
             }
-            
+            .border{
+                border-bottom: 5px solid #ccc;
+            }
         </style>
     </head>
     <body>
         <div class="container">
             <div class="table-responsive">
-                <table class="table" border="1" align="center" >
-                    <tr>
+                <h1 class="title" align="center">Publicaciones recientes</h1>
+                <table class="table" border="0" align="center" >
+<!--                    <tr>
                         <td>Titulo</td>
                         <td>Descripcion</td>
                         <td>Imagen</td>
-                    </tr>
+                    </tr>-->
                     <?php
                     while ($dato = mysqli_fetch_array($datos)) {
                         ?>
-                        <tr>
-                            <td><?php echo $dato['titulo'] ?></td>
-                            <td><?php echo $dato['descripcion'] ?></td>
-                            <td><img src="files/<?php echo $dato['archivo'] ?>" name="" width="300px"></td>
-                        </tr>
+                        <tr align="center"><td><?php echo $dato['titulo'] ?></td></tr>
+                        <tr align="center"><td><?php echo $dato['descripcion'] ?></td></tr>
+                        <tr align="center"><td class="border"><img src="files/<?php echo $dato['archivo'] ?>" name="" width="300px"><br><br>
+                                <textarea placeholder="Escriba un comentario"></textarea></td></tr>
                         <?php
                     }
                     ?>
