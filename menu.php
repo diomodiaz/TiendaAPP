@@ -19,8 +19,10 @@
     <body>
 
         <div class="container">
-            <a href="publicar.html">Publicar</a>
-            <a href="verPublicaciones.php">Ver publicaciones</a>
+            <ul class = "nav-barra de navegación nav">
+                <li><a href="publicar.html">Publicar</a></li>
+                <li><a href="verPublicaciones.php">Ver publicaciones</a></li>
+            </ul>
         </div>
 
     </body>

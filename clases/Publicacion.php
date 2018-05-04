@@ -17,7 +17,7 @@ class Publicacion {
     }
     
     public function consultarPublicaciones($con){
-        $query="SELECT * FROM posteo";
+        $query="SELECT * FROM posteo order by id_posteo DESC";
         $consulta = mysqli_query($con, $query);
         return $consulta;
     }
