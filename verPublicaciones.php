@@ -4,7 +4,7 @@ session_start();
 if ($_SESSION['usuario']) {
     
 } else {
-    header('Location: ../index.html');
+    header('Location: index.html');
 }
 
 include 'clases/Conexion.php';
@@ -27,13 +27,13 @@ $datos = $objPublicacion->consultarPublicaciones($con);
     </head>
     <body>
 
-        <nav class="navbar navbar-default">
+        <nav class="navbar navbar-default navbar-fixed-top">
             <div class="container-fluid">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="#">
-                        <img alt="Brand" src="...">
-                    </a>
-                </div>
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="verPublicaciones.php">Inicio</a></li>
+                    <li><a href="publicar.php">Nueva Publicación</a></li>
+                    <li><a href="controlador/cerrarsesion.php">Cerrar Sesión</a></li>
+                </ul>
             </div>
         </nav>
 
@@ -43,9 +43,9 @@ $datos = $objPublicacion->consultarPublicaciones($con);
         ?>
         <div class="container">
             <div class="table-responsive">
-                <menu class="menu">
+<!--                <menu class="menu">
                     <a class="" href="publicar.php"><button class="btn btn-primary btn-block">Nueva Publicacion</button></a>
-                </menu> 
+                </menu> -->
                 <table class="table" border="0" align="center" >
                     <?php
                     while ($dato = mysqli_fetch_array($datos)) {

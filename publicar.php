@@ -1,3 +1,21 @@
+<?php
+session_start();
+
+if ($_SESSION['usuario']) {
+    
+} else {
+    header('Location: ../index.html');
+}
+
+include 'clases/Conexion.php';
+include 'clases/Publicacion.php';
+
+$objConexion = new Conexion();
+$objPublicacion = new Publicacion();
+
+$con = $objConexion->conectar();
+$datos = $objPublicacion->consultarPublicaciones($con);
+?>
 <!DOCTYPE html>
 <html>
     <head>

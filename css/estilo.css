@@ -28,9 +28,9 @@
     background: #f2f2f2;
 }
 
-.menu{
+/*.menu{
     text-align: center;
-}
+}*/
 
 .bodyPublicar{
     background-image: url(../media/verPublicacion.jpg);
@@ -39,32 +39,3 @@
     background-attachment: fixed;
     /*background-position: center;*/
 }
-
-/*ul {
-    
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #0275d8;
-}
-
-li {
-    float: left;
-}
-
-li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-li a:hover:not(.active) {
-    background-color: #03AEFE;
-}
-
-.active {
-    background-color: #04ABFA;
-}*/
