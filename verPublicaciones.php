@@ -40,7 +40,7 @@ $datos = $objPublicacion->consultarPublicaciones($con);
 
         <?php
         echo $_SESSION['usuario'];
-        echo $_SESSION['clave'];
+//        echo $_SESSION['clave'];
         ?>
         <div class="container">
             <div class="table-responsive">
