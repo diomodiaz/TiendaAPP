@@ -23,16 +23,17 @@ $datos = $objPublicacion->consultarPublicaciones($con);
         <title>Publicaciones</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.4/css/bootstrap.min.css">
+        <link href="https://cdn.bootcss.com/tether/1.3.2/css/tether.min.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="css/estilo.css">
     </head>
-    <body>
+    <body class="bodyPublicaciones">
 
-        <nav class="navbar navbar-default navbar-fixed-top">
+        <nav class="navbar navbar-fixed-top navbar-dark bg-primary">
             <div class="container-fluid">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="verPublicaciones.php">Inicio</a></li>
-                    <li><a href="publicar.php">Nueva Publicación</a></li>
-                    <li><a href="controlador/cerrarsesion.php">Cerrar Sesión</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="verPublicaciones.php">Inicio</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="publicar.php">Publicar</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="controlador/cerrarsesion.php">Cerrar Sesión</a></li>
                 </ul>
             </div>
         </nav>
@@ -43,9 +44,9 @@ $datos = $objPublicacion->consultarPublicaciones($con);
         ?>
         <div class="container">
             <div class="table-responsive">
-<!--                <menu class="menu">
-                    <a class="" href="publicar.php"><button class="btn btn-primary btn-block">Nueva Publicacion</button></a>
-                </menu> -->
+                <!--                <menu class="menu">
+                                    <a class="" href="publicar.php"><button class="btn btn-primary btn-block">Nueva Publicacion</button></a>
+                                </menu> -->
                 <table class="table" border="0" align="center" >
                     <?php
                     while ($dato = mysqli_fetch_array($datos)) {
@@ -72,5 +73,8 @@ $datos = $objPublicacion->consultarPublicaciones($con);
                 <a href='menu.php'>Regresar</a>
             </div>
         </div>
+        <script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+        <script src="https://cdn.bootcss.com/tether/1.3.2/js/tether.min.js"></script>
+        <script src="https://cdn.bootcss.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js"></script>
     </body>
 </html>

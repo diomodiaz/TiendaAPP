@@ -26,6 +26,16 @@ $datos = $objPublicacion->consultarPublicaciones($con);
         <link rel="stylesheet" type="text/css" href="css/estilo.css">
     </head>
     <body class="bodyPublicar">
+        <nav class="navbar navbar-fixed-top navbar-dark bg-primary">
+            <div class="container-fluid">
+                <ul class="nav navbar-nav">
+                    <li class="nav-item active"><a class="nav-link" href="verPublicaciones.php">Inicio</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="publicar.php">Publicar</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="controlador/cerrarsesion.php">Cerrar Sesión</a></li>
+                </ul>
+            </div>
+        </nav>
+
         <div class="container">
             <h1>Añade tu publicación</h1>
             <form action="controlador/guardarpublicacion.php" method="post" enctype="multipart/form-data">

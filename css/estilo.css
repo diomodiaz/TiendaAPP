@@ -33,9 +33,13 @@
 }*/
 
 .bodyPublicar{
+    margin-top: 4em;
     background-image: url(../media/verPublicacion.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     /*background-position: center;*/
+}
+.bodyPublicaciones{
+    margin-top: 3em;
 }
