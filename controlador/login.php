@@ -18,8 +18,12 @@ $validacion = 0;
 $validacion = $datos->num_rows;
 if ($validacion == 1) {
     echo 'ingreso';
-    $_SESSION['usuario'] = $_POST['username'];
-    $_SESSION['clave'] = $_POST['password'];
+    while ($dato = mysqli_fetch_array($datos)) {
+        $_SESSION['usuario'] = $dato['username'];
+        $_SESSION['clave'] = $dato['password'];
+        $_SESSION['id_usuario'] = $dato['id_usuario'];
+    }
+
     header('Location: ../verPublicaciones.php');
 } else {
     echo 'no ingresa';

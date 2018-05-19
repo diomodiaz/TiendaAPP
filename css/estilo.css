@@ -43,3 +43,23 @@
 .bodyPublicaciones{
     margin-top: 3em;
 }
+p{
+    font-style: italic;
+    font-family: cursive;
+}
+.boton, .exito{ height:16px; 
+       background-image:url(../media/f.png); 
+       padding-top:4px; 
+       background-repeat:no-repeat; 
+       padding-left:26px; 
+       background-position:7% 50%; 
+       font-size:11px; 
+       font-weight:bold; 
+       width:57px; 
+       background-color:#4F62AA; 
+       border-radius:3px; 
+       color:#FFF; 
+       font-family:Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif; 
+       display:inline-block}
+
+.exito{ background-image:url(../media/exito.png);}

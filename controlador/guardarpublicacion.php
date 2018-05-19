@@ -8,6 +8,6 @@ $objPublicacion = new Publicacion();
 
 $con = $objConexion->conectar();
 
-$objPublicacion->guardarPulicacion($con, $_POST['titulo'], $_POST['descripcion'], $_FILES['foto']);
+$objPublicacion->guardarPulicacion($con, $_POST['titulo'], $_POST['descripcion'], $_POST['id_usuario'], $_FILES['foto']);
 
 header('Location: ../verPublicaciones.php');

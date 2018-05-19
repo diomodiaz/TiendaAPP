@@ -4,7 +4,7 @@ class Usuario {
 
     //Metodo para consultar los datos de la tabla usuario
     public function login($username, $password, $con) {
-        $sql = "SELECT username, password FROM usuario WHERE username ='$username' and password = $password";
+        $sql = "SELECT id_usuario, username, password FROM usuario WHERE username ='$username' and password = $password";
         $datos = mysqli_query($con, $sql);
         return $datos;
     }
@@ -20,8 +20,8 @@ class Usuario {
         return $respuesta;
     }
 
-    public function comentarios($con, $comentar) {
-        $query = "INSERT INTO comentario (comentar, id_usuario, id_posteo) VALUES ('$comentar', 1, 4)";
+    public function comentarios($con, $comentar, $id_usuario, $id_posteo) {
+        $query = "INSERT INTO comentario (comentar, id_usuario, id_posteo) VALUES ('$comentar', '$id_usuario', '$id_posteo')";
         $consulta = mysqli_query($con, $query);
         if ($consulta) {
             $respuesta = "Comentario publicado con Éxito";
@@ -30,11 +30,6 @@ class Usuario {
         }
         return $respuesta;
     }
-    
-    public function  consultarComentarios($con, $id_posteo){
-        $query="SELECT comentar FROM comentario WHERE id_posteo='$id_posteo'";
-        $consulta = mysqli_query($con, $query);
-        return $consulta;
-    }
+
 
 }

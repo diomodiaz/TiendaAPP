@@ -35,12 +35,18 @@ $datos = $objPublicacion->consultarPublicaciones($con);
                 </ul>
             </div>
         </nav>
-
+        <nav class="navbar navbar-fixed-bottom">
+            <?php
+            echo "Usuario: " . $_SESSION['usuario'];
+//        echo $_SESSION['clave'];
+            ?>
+        </nav>
         <div class="container">
             <h1>Añade tu publicación</h1>
             <form action="controlador/guardarpublicacion.php" method="post" enctype="multipart/form-data">
                 <div class="form-group">
                     <label>Titulo: </label>
+                    <input type="hidden" name="id_usuario" value="<?php echo $_SESSION['id_usuario']?>">
                     <input class="form-control" type="text" name="titulo" placeholder="Nombre Publicación" required>
                 </div>
                 <div class="form-group">

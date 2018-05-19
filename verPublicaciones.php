@@ -37,11 +37,12 @@ $datos = $objPublicacion->consultarPublicaciones($con);
                 </ul>
             </div>
         </nav>
-
-        <?php
-        echo $_SESSION['usuario'];
+        <nav class="navbar navbar-fixed-bottom">
+            <?php
+            echo "Usuario: " . $_SESSION['usuario'];
 //        echo $_SESSION['clave'];
-        ?>
+            ?>
+        </nav>
         <div class="container">
             <div class="table-responsive">
                 <!--                <menu class="menu">
@@ -52,15 +53,35 @@ $datos = $objPublicacion->consultarPublicaciones($con);
                     while ($dato = mysqli_fetch_array($datos)) {
                         ?>
                         <tr class="postInterna" align="center">
-                            <td><?php echo $dato['titulo'] ?></td>
+                            <td><?php echo "<strong>Titulo:</strong> ".$dato['titulo'] ?></td>
                         </tr>
                         <tr align="center" class="postInterna">
-                            <td><?php echo $dato['descripcion'] ?></td>
+                            <td><?php echo "<strong>Descripción:</strong> ".$dato['descripcion'] ?></td>
+                        </tr>
+                        <tr class="postInterna" align="center">
+                            <td>
+                                <strong>Comentarios:</strong>
+                                <?php
+                                $comentarios = $objPublicacion->consultarComentarios($con, $dato['id_posteo']);
+                                while ($comentario = mysqli_fetch_array($comentarios)) {
+                                    ?>
+                                <p style="font-family: cursive;">
+                                        
+                                        <?php
+                                        echo $comentario['comentar']."<br> <strong>Comentado por:</strong> ". $comentario['nombre'];
+                                        ?>
+                                    </p>
+                                    <?php
+                                }
+                                ?>
+                            </td>
                         </tr>
                         <tr align="center" class="postInterna">
                             <td class="border">
                                 <img src="files/<?php echo $dato['archivo'] ?>" name="" width="300px"><br><br>
                                 <form action="controlador/guardarcomentario.php" method="post">
+                                    <input type="hidden" name="id_usuario" value="<?php echo $_SESSION['id_usuario']?>">
+                                    <input type="hidden" name="id_posteo" value="<?php echo $dato['id_posteo']?>">
                                     <textarea type="text" name="comenta" placeholder="Escribe un comentario"></textarea><br>
                                     <input type="submit" value="Comentar">
                                 </form>

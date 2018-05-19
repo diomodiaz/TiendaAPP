@@ -7,4 +7,5 @@ $objConexion = new Conexion();
 $objUsuario = new Usuario();
 
 $con = $objConexion->conectar();
-echo $objUsuario->comentarios($con, $_POST['comenta']);
+$objUsuario->comentarios($con, $_POST['comenta'], $_POST['id_usuario'], $_POST['id_posteo']);
+header('Location: ../verPublicaciones.php');
